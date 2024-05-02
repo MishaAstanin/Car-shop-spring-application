@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+}
+
+.catalog {
+    margin: 5% 20%;
+}
+
+.catalog-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #457b9d;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.catalog-text {
+    display: flex;
+}
+
+.catalog-item-text {
+    margin-right: 10px;
+}
+
+.catalog-btn {
+    text-decoration: none;
+    background-color: #e63946;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 8px rgba(34, 60, 80, 0.2);
+    border: 3px solid #780000;
+}
+
+.catalog-btn:hover {
+    transform: scale(1.05);
+}

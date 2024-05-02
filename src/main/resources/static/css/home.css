@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    padding: 100px;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+}
+
+.catalog-link {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: 15px 25px;
+    background-color: #e63946;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.26);
+    border: 3px solid #780000;
+}
+
+.catalog-link:hover {
+    transform: scale(1.1);
+    transition: all linear 10ms;
+}

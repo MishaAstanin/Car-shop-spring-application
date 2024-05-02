@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/catalog.css">
+</head>
+<body>
+<header th:replace="/header :: header"></header>
+<main>
+    <div th:unless="${cars.isEmpty()}" class="catalog">
+        <h1>Каталог</h1>
+        <div th:each="car : ${cars}" class="catalog-item">
+            <div class="catalog-text">
+                <p th:text="${car.brand}" class="catalog-item-text"></p>
+                <p th:text="${car.model}" class="catalog-item-text"></p>
+            </div>
+            <a th:href="@{/cars/{id}(id=${car.id})}" class="catalog-btn">Подробнее</a>
+        </div>
+    </div>
+    <div th:if="${cars.isEmpty()}">
+        <p>Каталог пуст</p>
+    </div>
+</main>
+</body>
+</html>

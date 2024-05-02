@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Details</title>
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/carPage.css">
+</head>
+<body>
+<header th:replace="/header :: header"></header>
+
+<main>
+    <div class="car-details">
+        <div class="car-image">
+            <img th:src="@{'/static/images/' + ${car.id} + '.jpg'}" alt="Porsche 911" width="100%">
+        </div>
+        <div class="car-information">
+            <h1>Характеристики</h1>
+            <div>
+                <p th:utext="'<b>Марка:</b> ' + ${car.brand}"></p>
+                <p th:utext="'<b>Модель:</b> ' + ${car.model}"></p>
+                <p th:utext="'<b>Год выпуска:</b> ' + ${car.year}"></p>
+                <p th:utext="'<b>Цвет:</b> ' + ${car.color}"></p>
+                <p th:utext="'<b>Макс.скорость:</b> ' + ${car.speed} + ' км/ч'"></p>
+                <p th:utext="'<b>Мощность:</b> ' + ${car.horsepower} + ' л.с.'"></p>
+                <p th:utext="'<b>Объем двигателя:</b> ' + ${car.engine} + ' л'"></p>
+                <p th:utext="'<b>Цена:</b> ' + ${#numbers.formatInteger(car.price, 0, 'WHITESPACE')} + ' руб.'"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-container">
+        <a th:href="@{/createOrder(carId=${car.id})}" class="order-btn">Забронировать</a>
+    </div>
+</main>
+</body>
+</html>
